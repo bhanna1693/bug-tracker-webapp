@@ -3,22 +3,22 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {AuthRoutingModule} from './auth-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NavModule} from "./nav/nav.module";
-import {NoteModule} from "./note/note.module";
+import {HomeComponent} from "./home/home.component";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     NavModule,
-    NoteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

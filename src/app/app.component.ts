@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OktaAuthService } from '@okta/okta-angular';
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -8,15 +9,12 @@ import { OktaAuthService } from '@okta/okta-angular';
 })
 export class AppComponent implements OnInit {
   title = 'webapp';
-  isAuthenticated: boolean;
+  notes = this.http.get(environment.API_BASE_URL + '/notes');
 
-  constructor(public oktaAuth: OktaAuthService) {
+  constructor(private http: HttpClient) {
   }
 
-  async ngOnInit() {
-    this.isAuthenticated = await this.oktaAuth.isAuthenticated();
-    this.oktaAuth.$authenticationState.subscribe(
-      (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
-    );
+  ngOnInit() {
+
   }
 }
