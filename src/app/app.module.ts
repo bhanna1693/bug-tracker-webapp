@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {AuthRoutingModule} from './auth-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NavModule} from "./nav/nav.module";
+import {NoteModule} from "./note/note.module";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {NavModule} from "./nav/nav.module";
     AuthRoutingModule,
     BrowserAnimationsModule,
     NavModule,
+    NoteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

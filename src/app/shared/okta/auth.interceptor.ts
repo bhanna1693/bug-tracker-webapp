@@ -18,6 +18,7 @@ export class AuthInterceptor implements HttpInterceptor {
     const allowedOrigins = ['http://localhost'];
     if (allowedOrigins.some(url => request.urlWithParams.includes(url))) {
       const accessToken = await this.oktaAuth.getAccessToken();
+      console.log('Access Token: ', accessToken)
       request = request.clone({
         setHeaders: {
           Authorization: 'Bearer ' + accessToken
