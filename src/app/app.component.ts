@@ -9,7 +9,7 @@ import {environment} from "../environments/environment";
 })
 export class AppComponent implements OnInit {
   title = 'webapp';
-  notes = this.http.get(environment.API_BASE_URL + '/notes');
+  notes = this.http.get(environment.API_BASE_URL + '/employees/1');
 
   constructor(private http: HttpClient) {
   }
